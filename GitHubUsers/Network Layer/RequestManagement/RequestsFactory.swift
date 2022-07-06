@@ -9,13 +9,26 @@ import Foundation
 
 struct RequestsFactory {
     
-    struct UsersGitHubApiRequests {
+    struct GitHubApiRequests {
         
-        static func getUsers(since: Int) -> RequestConfig<GitHubUsersParser> {
-            return RequestConfig<GitHubUsersParser>(request: GetUsersRequest(since: since), parser: GitHubUsersParser())
+        struct UsersGitHubApiRequests {
+            
+            static func getUsers(since: Int) -> RequestConfig<GitHubUsersParser> {
+                return RequestConfig<GitHubUsersParser>(request: GetUsersRequest(since: since), parser: GitHubUsersParser())
+            }
+            
+            static func getUser(username: String) -> RequestConfig<GitHubUserParser> {
+                return RequestConfig<GitHubUserParser>(request: GetUserRequest(username: username), parser: GitHubUserParser())
+            }
+        }
+        
+        struct EmojisGitHubApiRequests {
+            
+            static func getEmojis() -> RequestConfig<GitHubEmojisParser> {
+                return RequestConfig<GitHubEmojisParser>(request: GetEmojisRequest(), parser: GitHubEmojisParser())
+            }
         }
     }
-    
     struct ImagesRequests {
         
         static func getImage(urlString: String) -> RequestConfig<ImageParser> {

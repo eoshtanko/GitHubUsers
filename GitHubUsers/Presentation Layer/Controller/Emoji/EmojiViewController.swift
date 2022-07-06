@@ -1,61 +1,55 @@
 //
-//  UsersViewController.swift
-//  GitHubUsers
+//  EmojiViewController.swift
+//  GitHubemojis
 //
-//  Created by Екатерина on 05.07.2022.
+//  Created by Екатерина on 06.07.2022.
 //
 
 import UIKit
 
-class UsersViewController: UIViewController {
+class EmojiViewController: UIViewController {
     
-    var currentAPICallPage = 1
-    var usersList: [Users] = []
+    var emojiList: [String] = []
     
-    var usersView: UsersView? {
-        view as? UsersView
+    var emojisView: EmojisView? {
+        view as? EmojisView
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        emojisView?.collectionView.frame.origin = CGPoint(x: 0, y: UIApplication.shared.statusBarFrame.height)
     }
     
     private let refreshControl = UIRefreshControl()
     
     private let requestSender: RequestSenderProtocol
 
-    
     init(requestSender: RequestSenderProtocol) {
         self.requestSender = requestSender
         super.init(nibName: nil, bundle: nil)
     }
     
     override func loadView() {
-        view = UsersView()
+        view = EmojisView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
-        usersView?.configureView()
-        usersView?.activityIndicator?.startAnimating()
-        initiallyDownloadUsers()
+        configureCollectionView()
+        emojisView?.configureView()
         configurePullToRefresh()
+        emojisView?.activityIndicator?.startAnimating()
+        downloadEmojis()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        usersView?.configureNavigationTitle(navigationItem: navigationItem, navigationController: navigationController)
-    }
-    
-    @objc private func initiallyDownloadUsers() {
-        downloadUsers(page: 1, completitionSuccess: completitionSuccessForInitialRequest(_:), competitionFailer: completitionFailerForInitialRequest(_:))
-    }
-    
-    func downloadUsers(page: Int, completitionSuccess: (([Users]) -> Void)?, competitionFailer: ((Error) -> Void)?) {
-        let requestConfig = RequestsFactory.GitHubApiRequests.UsersGitHubApiRequests.getUsers(since: page)
-        requestSender.send(config: requestConfig) { (result: Result<[Users], Error>) in
+
+    @objc private func downloadEmojis() {
+        let requestConfig = RequestsFactory.GitHubApiRequests.EmojisGitHubApiRequests.getEmojis()
+        requestSender.send(config: requestConfig) { (result: Result<Emoji, Error>) in
             switch result {
-            case .success(let users):
-                completitionSuccess?(users)
+            case .success(let emojis):
+                self.completitionSuccessForRequest(emojis)
             case .failure(let failure):
-                competitionFailer?(failure)
+                self.completitionFailerForRequest(failure)
             }
         }
     }
@@ -76,24 +70,24 @@ class UsersViewController: UIViewController {
         }
     }
     
-    private func configureTableView() {
-        usersView?.tableView.dataSource = self
-        usersView?.tableView.delegate = self
+    private func configureCollectionView() {
+        emojisView?.collectionView.dataSource = self
+        emojisView?.collectionView.delegate = self
     }
     
-    private func completitionSuccessForInitialRequest(_ users: [Users]) {
-        usersList.append(contentsOf: users)
+    private func completitionSuccessForRequest(_ emojis: Emoji) {
+        emojiList = emojis.values.map{ $0 }
         DispatchQueue.main.async { [weak self] in
-            self?.usersView?.activityIndicator?.stopAnimating()
+            self?.emojisView?.activityIndicator?.stopAnimating()
             self?.refreshControl.endRefreshing()
-            self?.usersView?.tableView.reloadData()
+            self?.emojisView?.collectionView.reloadData()
         }
     }
     
-    private func completitionFailerForInitialRequest(_ failure: Error) {
+    private func completitionFailerForRequest(_ failure: Error) {
         DispatchQueue.main.async { [weak self] in
             self?.refreshControl.endRefreshing()
-            self?.usersView?.activityIndicator?.stopAnimating()
+            self?.emojisView?.activityIndicator?.stopAnimating()
             self?.showFailureAlert()
         }
     }
@@ -108,8 +102,8 @@ class UsersViewController: UIViewController {
     
     private func configurePullToRefresh() {
         refreshControl.attributedTitle = NSAttributedString(string: "Updating")
-        refreshControl.addTarget(self, action: #selector(initiallyDownloadUsers), for: .valueChanged)
-        usersView?.tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(downloadEmojis), for: .valueChanged)
+        emojisView?.collectionView.addSubview(refreshControl)
     }
     
     required init?(coder: NSCoder) {
@@ -117,7 +111,7 @@ class UsersViewController: UIViewController {
     }
     
     enum Const {
-        static let numberOfSections = 1
+        static let numberOfColumns: CGFloat = 8
         static let hightOfCell: CGFloat = 70
     }
 }

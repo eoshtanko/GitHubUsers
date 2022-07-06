@@ -8,13 +8,14 @@
 import Foundation
 
 public struct User : Codable {
-    public let avatarUrl : String?
-    public let company : String?
-    public let createdAt : String?
-    public let email : String?
-    public let followers : Int?
-    public let following : Int?
-    public let name : String?
+    let avatarUrl : String?
+    let company : String?
+    let createdAt : String?
+    let email : String?
+    let followers : Int?
+    let following : Int?
+    let name : String?
+    let login : String?
 
 
     enum CodingKeys: String, CodingKey {
@@ -25,6 +26,7 @@ public struct User : Codable {
         case followers
         case following
         case name
+        case login
     }
     
     public init(from decoder: Decoder) throws {
@@ -36,5 +38,6 @@ public struct User : Codable {
         followers = try values.decodeIfPresent(Int.self, forKey: .followers)
         following = try values.decodeIfPresent(Int.self, forKey: .following)
         name = try values.decodeIfPresent(String.self, forKey: .name)
+        login = try values.decodeIfPresent(String.self, forKey: .login)
     }
 }

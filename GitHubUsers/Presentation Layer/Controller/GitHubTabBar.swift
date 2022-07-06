@@ -16,8 +16,8 @@ class GitHubTabBar: UITabBarController {
     
     private func setupViewControllers() {
         viewControllers = [
+            getEmojiViewController(),
             getUsersViewController(),
-            getEmojiViewController()
         ]
     }
     
@@ -32,7 +32,7 @@ class GitHubTabBar: UITabBarController {
     }
     
     private func getEmojiViewController() -> UIViewController {
-        let viewController = UIViewController()
+        let viewController = EmojiViewController(requestSender: RequestSender())
         if #available(iOS 13.0, *) {
             viewController.tabBarItem.image = UIImage(systemName: "smiley.fill")
         } else {

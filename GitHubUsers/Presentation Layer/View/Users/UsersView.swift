@@ -40,7 +40,7 @@ class UsersView: UIView {
     }
     
     func configureNavigationTitle(navigationItem: UINavigationItem, navigationController: UINavigationController?) {
-        navigationItem.title = "Пользователи"
+        navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -48,7 +48,6 @@ class UsersView: UIView {
         activityIndicator = UIActivityIndicatorView()
         activityIndicator?.center = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
         activityIndicator?.hidesWhenStopped = true
-//        activityIndicator?.transform = CGAffineTransform(scaleX: 3, y: 3)
         if let activityIndicator = activityIndicator {
             tableView.addSubview(activityIndicator)
         }

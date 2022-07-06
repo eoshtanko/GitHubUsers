@@ -79,7 +79,7 @@ class UsersTableViewCell: UITableViewCell {
         avatarImageView.image = UIImage(named: "defaultImage")
         avatarImageView.contentMode = .scaleAspectFill
         avatarImageView.frame.size = CGSize(width: Const.avatarSideSize, height: Const.avatarSideSize)
-        self.avatarImageView.clipsToBounds = true
+        avatarImageView.clipsToBounds = true
         
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

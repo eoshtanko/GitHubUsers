@@ -23,7 +23,6 @@ class RequestSender: RequestSenderProtocol {
                competionHandler(.failure(error))
                return
            }
-           print(response.debugDescription)
            guard let data = data,
                  let parsedModel: Parser.Model = config.parser.parse(data: data) else {
                      competionHandler(.failure(NetworkError.parsingError))

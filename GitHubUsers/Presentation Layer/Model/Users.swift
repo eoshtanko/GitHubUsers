@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Users : Codable {
-    public let avatarUrl : String?
-    public let id : Int?
-    public let login : String?
+    let avatarUrl : String?
+    let id : Int?
+    let login : String?
     
     
     enum CodingKeys: String, CodingKey {

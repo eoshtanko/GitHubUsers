@@ -30,6 +30,16 @@
 		341DDA242874CCA100001DFA /* GetEmojisRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA232874CCA100001DFA /* GetEmojisRequest.swift */; };
 		341DDA262874E53B00001DFA /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA252874E53B00001DFA /* ImageParser.swift */; };
 		341DDA282874E58700001DFA /* GetImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA272874E58700001DFA /* GetImageRequest.swift */; };
+		341DDA302874E8F300001DFA /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA2F2874E8F300001DFA /* Emoji.swift */; };
+		341DDA322874E9D900001DFA /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA312874E9D900001DFA /* EmojiViewController.swift */; };
+		341DDA342874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA332874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift */; };
+		341DDA362874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA352874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift */; };
+		341DDA382874EA1100001DFA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA372874EA1100001DFA /* UserViewController.swift */; };
+		341DDA3A2874EA2A00001DFA /* EmojisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA392874EA2A00001DFA /* EmojisView.swift */; };
+		341DDA3C2874EA4100001DFA /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA3B2874EA4100001DFA /* EmojiCollectionViewCell.swift */; };
+		341DDA462874F6EB00001DFA /* GitHubEmojisParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA452874F6EB00001DFA /* GitHubEmojisParser.swift */; };
+		341DDA48287558E600001DFA /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA47287558E600001DFA /* UserView.swift */; };
+		341DDA4A287586F500001DFA /* GitHubUserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA49287586F400001DFA /* GitHubUserParser.swift */; };
 		34C0DA47287423C70046AB90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0DA46287423C70046AB90 /* AppDelegate.swift */; };
 		34C0DA50287423CB0046AB90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0DA4F287423CB0046AB90 /* Assets.xcassets */; };
 		34C0DA53287423CB0046AB90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C0DA51287423CB0046AB90 /* LaunchScreen.storyboard */; };
@@ -59,6 +69,16 @@
 		341DDA232874CCA100001DFA /* GetEmojisRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmojisRequest.swift; sourceTree = "<group>"; };
 		341DDA252874E53B00001DFA /* ImageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageParser.swift; sourceTree = "<group>"; };
 		341DDA272874E58700001DFA /* GetImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageRequest.swift; sourceTree = "<group>"; };
+		341DDA2F2874E8F300001DFA /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		341DDA312874E9D900001DFA /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
+		341DDA332874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojiViewController + UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		341DDA352874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojiViewController + UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		341DDA372874EA1100001DFA /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		341DDA392874EA2A00001DFA /* EmojisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisView.swift; sourceTree = "<group>"; };
+		341DDA3B2874EA4100001DFA /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		341DDA452874F6EB00001DFA /* GitHubEmojisParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubEmojisParser.swift; sourceTree = "<group>"; };
+		341DDA47287558E600001DFA /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		341DDA49287586F400001DFA /* GitHubUserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserParser.swift; sourceTree = "<group>"; };
 		34C0DA43287423C70046AB90 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0DA46287423C70046AB90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34C0DA4F287423CB0046AB90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				341DD9F328744A3D00001DFA /* UsersViewController.swift */,
-				341DD9F628744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift */,
 				341DD9F828744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift */,
+				341DD9F628744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -92,7 +112,6 @@
 			children = (
 				341DD9FB28744D7700001DFA /* UsersView.swift */,
 				341DD9FD2874550E00001DFA /* UsersTableViewCell.swift */,
-				341DD9FF2874555600001DFA /* View.xib */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -123,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				341DDA082874AA3200001DFA /* ParserProtocol.swift */,
-				341DDA0A2874AA5C00001DFA /* GitHubUsersParser.swift */,
-				341DDA252874E53B00001DFA /* ImageParser.swift */,
+				341DDA412874F61300001DFA /* GitHubApiParsers */,
+				341DDA442874F64400001DFA /* ImagesParsers */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -169,9 +188,8 @@
 		341DDA292874E64300001DFA /* GitHubApiRequests */ = {
 			isa = PBXGroup;
 			children = (
-				341DDA052874A9FD00001DFA /* GetUsersRequest.swift */,
-				341DDA212874CC8100001DFA /* GetUserRequest.swift */,
-				341DDA232874CCA100001DFA /* GetEmojisRequest.swift */,
+				341DDA3F2874F54D00001DFA /* Users */,
+				341DDA402874F55900001DFA /* Emojis */,
 			);
 			path = GitHubApiRequests;
 			sourceTree = "<group>";
@@ -182,6 +200,93 @@
 				341DDA272874E58700001DFA /* GetImageRequest.swift */,
 			);
 			path = ImagesRequests;
+			sourceTree = "<group>";
+		};
+		341DDA2B2874E89F00001DFA /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA312874E9D900001DFA /* EmojiViewController.swift */,
+				341DDA332874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift */,
+				341DDA352874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		341DDA2C2874E8A900001DFA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA372874EA1100001DFA /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		341DDA2D2874E8C000001DFA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA47287558E600001DFA /* UserView.swift */,
+				341DD9FF2874555600001DFA /* View.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		341DDA2E2874E8CA00001DFA /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA392874EA2A00001DFA /* EmojisView.swift */,
+				341DDA3B2874EA4100001DFA /* EmojiCollectionViewCell.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		341DDA3F2874F54D00001DFA /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA052874A9FD00001DFA /* GetUsersRequest.swift */,
+				341DDA212874CC8100001DFA /* GetUserRequest.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		341DDA402874F55900001DFA /* Emojis */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA232874CCA100001DFA /* GetEmojisRequest.swift */,
+			);
+			path = Emojis;
+			sourceTree = "<group>";
+		};
+		341DDA412874F61300001DFA /* GitHubApiParsers */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA422874F62B00001DFA /* Users */,
+				341DDA432874F63600001DFA /* Emojis */,
+			);
+			path = GitHubApiParsers;
+			sourceTree = "<group>";
+		};
+		341DDA422874F62B00001DFA /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA0A2874AA5C00001DFA /* GitHubUsersParser.swift */,
+				341DDA49287586F400001DFA /* GitHubUserParser.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		341DDA432874F63600001DFA /* Emojis */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA452874F6EB00001DFA /* GitHubEmojisParser.swift */,
+			);
+			path = Emojis;
+			sourceTree = "<group>";
+		};
+		341DDA442874F64400001DFA /* ImagesParsers */ = {
+			isa = PBXGroup;
+			children = (
+				341DDA252874E53B00001DFA /* ImageParser.swift */,
+			);
+			path = ImagesParsers;
 			sourceTree = "<group>";
 		};
 		3485221A28742562004225D2 /* Supporting files */ = {
@@ -205,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				341DD9FA28744D6A00001DFA /* Users */,
+				341DDA2D2874E8C000001DFA /* User */,
+				341DDA2E2874E8CA00001DFA /* Emoji */,
 				34C0DA51287423CB0046AB90 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -215,6 +322,7 @@
 			children = (
 				341DDA1D2874B98800001DFA /* Users.swift */,
 				341DDA1F2874BA0900001DFA /* User.swift */,
+				341DDA2F2874E8F300001DFA /* Emoji.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +332,8 @@
 			children = (
 				341DD9F128742CAF00001DFA /* GitHubTabBar.swift */,
 				341DD9F528744BD800001DFA /* Users */,
+				341DDA2C2874E8A900001DFA /* User */,
+				341DDA2B2874E89F00001DFA /* Emoji */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -329,13 +439,19 @@
 				341DDA1A2874AB9D00001DFA /* NetworkError.swift in Sources */,
 				341DDA282874E58700001DFA /* GetImageRequest.swift in Sources */,
 				341DD9F928744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift in Sources */,
+				341DDA48287558E600001DFA /* UserView.swift in Sources */,
+				341DDA362874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift in Sources */,
 				341DDA0B2874AA5C00001DFA /* GitHubUsersParser.swift in Sources */,
 				341DDA142874AAE900001DFA /* RequestSender.swift in Sources */,
+				341DDA342874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift in Sources */,
+				341DDA3C2874EA4100001DFA /* EmojiCollectionViewCell.swift in Sources */,
 				341DD9FC28744D7700001DFA /* UsersView.swift in Sources */,
+				341DDA462874F6EB00001DFA /* GitHubEmojisParser.swift in Sources */,
 				341DDA1E2874B98800001DFA /* Users.swift in Sources */,
 				341DDA062874A9FD00001DFA /* GetUsersRequest.swift in Sources */,
 				341DD9FE2874550E00001DFA /* UsersTableViewCell.swift in Sources */,
 				341DDA262874E53B00001DFA /* ImageParser.swift in Sources */,
+				341DDA4A287586F500001DFA /* GitHubUserParser.swift in Sources */,
 				341DDA042874A9C900001DFA /* RequestProtocol.swift in Sources */,
 				341DDA122874AAC300001DFA /* RequestSenderProtocol.swift in Sources */,
 				341DDA102874AAB000001DFA /* RequestConfig.swift in Sources */,
@@ -343,8 +459,12 @@
 				341DDA172874AB7A00001DFA /* URLProvider.swift in Sources */,
 				341DDA202874BA0900001DFA /* User.swift in Sources */,
 				341DD9F428744A3E00001DFA /* UsersViewController.swift in Sources */,
+				341DDA322874E9D900001DFA /* EmojiViewController.swift in Sources */,
 				341DDA242874CCA100001DFA /* GetEmojisRequest.swift in Sources */,
+				341DDA382874EA1100001DFA /* UserViewController.swift in Sources */,
+				341DDA302874E8F300001DFA /* Emoji.swift in Sources */,
 				341DDA0E2874AAA200001DFA /* RequestsFactory.swift in Sources */,
+				341DDA3A2874EA2A00001DFA /* EmojisView.swift in Sources */,
 				341DD9F728744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift in Sources */,
 				341DDA092874AA3200001DFA /* ParserProtocol.swift in Sources */,
 				341DD9F228742CAF00001DFA /* GitHubTabBar.swift in Sources */,
