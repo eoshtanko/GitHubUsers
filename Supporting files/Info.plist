@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>gitHubEmojisApiPath</key>
-	<string>$(GITHUB_USERS_API_PATH)</string>
-	<key>gitHubUsersApiPath</key>
 	<string>$(GITHUB_EMOJIS_API_PATH)</string>
+	<key>gitHubUsersApiPath</key>
+	<string>$(GITHUB_USERS_API_PATH)</string>
 </dict>
 </plist>

@@ -83,7 +83,7 @@ class UserView: UIView {
             followersLabel.text = String(followers)
         }
         if let createdAt = user.createdAt {
-            dateLabel.text = createdAt
+            dateLabel.text = String(createdAt.prefix(10))
         }
         if let avatarUrl = user.avatarUrl {
             downloadImageAction?(avatarUrl) { [weak self] image in
