@@ -22,7 +22,6 @@ class RequestSender: RequestSenderProtocol {
             competionHandler(.failure(NetworkError.badURL))
             return
         }
-        print(urlRequest)
         let task = session.dataTask(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
                 print(response.debugDescription)
