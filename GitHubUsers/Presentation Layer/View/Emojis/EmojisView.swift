@@ -38,6 +38,7 @@ class EmojisView: UIView {
         addSubview(collectionView)
         registerCell()
         configureCollectionViewAppearance()
+        collectionView.alwaysBounceVertical = true
     }
     
     private func registerCell() {
@@ -47,10 +48,10 @@ class EmojisView: UIView {
     private func configureCollectionViewAppearance() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

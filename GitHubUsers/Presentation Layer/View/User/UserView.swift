@@ -142,7 +142,8 @@ class UserView: UIView {
     
     private func configureLabelConstraints(title: UILabel, label: UILabel) {
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: title.trailingAnchor, constant: Const.titleLeadingConstraint),
+            label.leadingAnchor.constraint(equalTo: title.trailingAnchor, constant: Const.labelsLeadingConstraint),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Const.labelsTrailingConstraint),
             label.centerYAnchor.constraint(equalTo: title.centerYAnchor)
         ])
     }
@@ -196,11 +197,12 @@ class UserView: UIView {
     private enum Const {
         static let avatarLeadingConstraint: CGFloat = 90
         static let avatarTopConstraint: CGFloat = 20
-        static let titlesLeadingConstraint: CGFloat = 20
-        static let firstTitleTopConstraint: CGFloat = 30
-        static let titleLeadingConstraint: CGFloat = 5
+        static let titlesLeadingConstraint: CGFloat = 15
+        static let firstTitleTopConstraint: CGFloat = 20
+        static let labelsLeadingConstraint: CGFloat = 5
         static let titleTopConstraint: CGFloat = 15
         static let titleLabelsFontSize: CGFloat = 17
+        static let labelsTrailingConstraint: CGFloat = -15
         static let avatarSideSize: CGFloat = 190
     }
 }
