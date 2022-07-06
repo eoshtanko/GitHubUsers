@@ -16,11 +16,12 @@ extension EmojiViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: EmojisCollectionViewCell.identifier,
-            for: indexPath)
+            for: indexPath
+        )
         guard let emojiCell = cell as? EmojisCollectionViewCell else {
             return cell
         }
-        emojiCell.downloadImageAction = downloadImage
+        emojiCell.downloadImageAction = downloadImageService.downloadImage
         emojiCell.configure(with: emojiList[indexPath.row])
         
         return emojiCell

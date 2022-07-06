@@ -9,14 +9,11 @@ import Foundation
 
 public struct URLProvider {
     
-    public static let imagesApiStringURL: String? = "https://api.github.com/users"
-    public static let imagesApiStringURL2: String? = "https://api.github.com/users"
-
-    public static let imagesApiStringURL1: String? = "https://api.github.com/emojis"
-
-    // https://api.github.com/users?since=\(since)
-    // https://api.github.com/users/\(encodedUsername)
-    //
+    public static let gitHubEmojisApiPath = Bundle.main.object(
+        forInfoDictionaryKey: "gitHubEmojisApiPath"
+    ) as? String
     
-    // Bundle.main.object(forInfoDictionaryKey: "imagesApiUrl") as? String
+    public static let gitHubUsersApiPath = Bundle.main.object(
+        forInfoDictionaryKey: "gitHubUsersApiPath"
+    ) as? String
 }

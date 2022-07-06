@@ -1,5 +1,5 @@
 //
-//  GetAllUsersRequest.swift
+//  GetUserListRequest.swift
 //  GitHubUsers
 //
 //  Created by Екатерина on 05.07.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetUsersRequest: RequestProtocol {
+struct GetUserListRequest: RequestProtocol {
     
     let since: Int
     
@@ -19,7 +19,7 @@ struct GetUsersRequest: RequestProtocol {
         let parametrs = ["since": "\(since)",
                          "per_page": "\(Const.usersPerPage)"]
         
-        guard let stringUrl = URLProvider.imagesApiStringURL,
+        guard let stringUrl = URLProvider.gitHubUsersApiPath,
               let url = URL(string: stringUrl + paramsToString(params: parametrs)) else {
                   return nil
               }

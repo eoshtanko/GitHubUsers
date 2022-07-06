@@ -9,11 +9,12 @@ import UIKit
 
 @main
 final class AppDelegate: UIResponder {
+    
     lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
-    var layer: CAEmitterLayer?
 }
 
 extension AppDelegate: UIApplicationDelegate {
+    
     func application( _ application: UIApplication,
                       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.rootViewController = GitHubTabBar()

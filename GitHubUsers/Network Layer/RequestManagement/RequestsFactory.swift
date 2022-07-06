@@ -11,10 +11,10 @@ struct RequestsFactory {
     
     struct GitHubApiRequests {
         
-        struct UsersGitHubApiRequests {
+        struct UsersApiRequests {
             
             static func getUsers(since: Int) -> RequestConfig<GitHubUsersParser> {
-                return RequestConfig<GitHubUsersParser>(request: GetUsersRequest(since: since), parser: GitHubUsersParser())
+                return RequestConfig<GitHubUsersParser>(request: GetUserListRequest(since: since), parser: GitHubUsersParser())
             }
             
             static func getUser(username: String) -> RequestConfig<GitHubUserParser> {
@@ -22,7 +22,7 @@ struct RequestsFactory {
             }
         }
         
-        struct EmojisGitHubApiRequests {
+        struct EmojisApiRequests {
             
             static func getEmojis() -> RequestConfig<GitHubEmojisParser> {
                 return RequestConfig<GitHubEmojisParser>(request: GetEmojisRequest(), parser: GitHubEmojisParser())

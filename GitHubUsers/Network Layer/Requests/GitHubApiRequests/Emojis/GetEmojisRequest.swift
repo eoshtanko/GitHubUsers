@@ -10,7 +10,7 @@ import Foundation
 struct GetEmojisRequest: RequestProtocol {
     
     var urlRequest: URLRequest? {
-        guard let stringUrl = URLProvider.imagesApiStringURL1,
+        guard let stringUrl = URLProvider.gitHubEmojisApiPath,
               let url = URL(string: stringUrl + "?") else {
                   return nil
               }

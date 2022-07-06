@@ -9,10 +9,10 @@ import Foundation
 
 class GitHubUsersParser: ParserProtocol {
     
-    typealias Model = [Users]
+    typealias Model = [UserListItem]
     
-    func parse(data: Data) -> [Users]? {
-        guard let users = try? JSONDecoder().decode([Users].self, from: data) else {
+    func parse(data: Data) -> [UserListItem]? {
+        guard let users = try? JSONDecoder().decode([UserListItem].self, from: data) else {
             return nil
         }
         return users

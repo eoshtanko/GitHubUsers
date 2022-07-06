@@ -9,35 +9,45 @@ import UIKit
 
 class GitHubTabBar: UITabBarController {
     
+    // -MARK: override
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
     }
     
+    // -MARK: private
+    
     private func setupViewControllers() {
         viewControllers = [
-            getEmojiViewController(),
             getUsersViewController(),
+            getEmojiViewController()
         ]
     }
     
     private func getUsersViewController() -> UIViewController {
-        let navigationViewController = UINavigationController(rootViewController: UsersViewController(requestSender: RequestSender()))
-        if #available(iOS 13.0, *) {
-            navigationViewController.tabBarItem.image = UIImage(systemName: "person.fill")
-        } else {
-            navigationViewController.tabBarItem.image = UIImage(named: "person.fill")
-        }
-        return navigationViewController
+        let viewController = UINavigationController(
+            rootViewController: UserListViewController(requestSender: RequestSender(),
+                                                       downloadImageService: DownloadImageService(
+                                                        requestSender: RequestSender()))
+        )
+        setTabBarItemImage(viewController: viewController, imageName: "person.fill")
+        return viewController
     }
     
     private func getEmojiViewController() -> UIViewController {
-        let viewController = EmojiViewController(requestSender: RequestSender())
-        if #available(iOS 13.0, *) {
-            viewController.tabBarItem.image = UIImage(systemName: "smiley.fill")
-        } else {
-            viewController.tabBarItem.image = UIImage(named: "smiley.fill")
-        }
+        let viewController = EmojiViewController(requestSender: RequestSender(),
+                                                 downloadImageService: DownloadImageService(
+                                                    requestSender: RequestSender()))
+        setTabBarItemImage(viewController: viewController, imageName: "smiley.fill")
         return viewController
+    }
+    
+    private func setTabBarItemImage(viewController: UIViewController, imageName: String) {
+        if #available(iOS 13.0, *) {
+            viewController.tabBarItem.image = UIImage(systemName: imageName)
+        } else {
+            viewController.tabBarItem.image = UIImage(named: imageName)
+        }
     }
 }

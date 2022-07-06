@@ -8,6 +8,6 @@
 import Foundation
 
 enum NetworkError: Error {
-   case badURL
-   case parsingError
+    case badURL
+    case parsingError
 }

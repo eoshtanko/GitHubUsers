@@ -1,0 +1,13 @@
+//
+//  GitHubUsersConfig.xcconfig
+//  GitHubUsers
+//
+//  Created by Екатерина on 07.07.2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GITHUB_API_HOST=https:/$()/api.github.com
+GITHUB_USERS_API_PATH=$(GITHUB_API_HOST)/users
+GITHUB_EMOJIS_API_PATH=$(GITHUB_API_HOST)/emojis

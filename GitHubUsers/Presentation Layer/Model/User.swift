@@ -8,6 +8,7 @@
 import Foundation
 
 public struct User : Codable {
+    
     let avatarUrl : String?
     let company : String?
     let createdAt : String?

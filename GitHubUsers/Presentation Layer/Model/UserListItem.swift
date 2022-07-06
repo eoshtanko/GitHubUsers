@@ -1,5 +1,5 @@
 //
-//  AllUsers.swift
+//  UserListItem.swift
 //  GitHubUsers
 //
 //  Created by Екатерина on 05.07.2022.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct Users : Codable {
+public struct UserListItem : Codable {
+    
     let avatarUrl : String?
     let id : Int?
     let login : String?

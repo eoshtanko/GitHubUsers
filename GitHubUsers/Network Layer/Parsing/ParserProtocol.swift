@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ParserProtocol {
-   associatedtype Model
-   func parse(data: Data) -> Model?
+    associatedtype Model
+    func parse(data: Data) -> Model?
 }

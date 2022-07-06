@@ -9,19 +9,30 @@ import UIKit
 
 class UserViewController: UIViewController {
     
+    // -MARK: fields
+    
     var user: User?
-    let userName: String
+    let userName: String?
     
     var userView: UserView? {
         view as? UserView
     }
     
     private let requestSender: RequestSenderProtocol
+    private let downloadImageService: DownloadImageServiceProtocol
     
-    init(requestSender: RequestSenderProtocol, userName: String) {
-        self.requestSender = requestSender
+    // -MARK: override
+    
+    init(userName: String?, requestSender: RequestSenderProtocol,
+         downloadImageService: DownloadImageServiceProtocol) {
         self.userName = userName
+        self.requestSender = requestSender
+        self.downloadImageService = downloadImageService
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func loadView() {
@@ -30,19 +41,17 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userView?.configureView(downloadImageAction: downloadImage, navigationItem: navigationItem)
+        userView?.configureView(downloadImageAction: downloadImageService.downloadImage,
+                                navigationItem: navigationItem)
         userView?.activityIndicator?.startAnimating()
         downloadUser()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        guard let userView = userView else { return }
-        userView.avatarImageView.layer.cornerRadius = userView.avatarImageView.frame.width / 2
-    }
+    // -MARK: internal
     
     @objc func downloadUser() {
-        let requestConfig = RequestsFactory.GitHubApiRequests.UsersGitHubApiRequests.getUser(username: userName)
+        guard let userName = userName else { return }
+        let requestConfig = RequestsFactory.GitHubApiRequests.UsersApiRequests.getUser(username: userName)
         requestSender.send(config: requestConfig) { (result: Result<User, Error>) in
             switch result {
             case .success(let user):
@@ -53,21 +62,7 @@ class UserViewController: UIViewController {
         }
     }
     
-    func downloadImage(from url: String, competition: ((UIImage) -> Void)?) {
-        let requestConfig = RequestsFactory.ImagesRequests.getImage(urlString: url)
-        requestSender.send(config: requestConfig) { (result: Result<Data, Error>) in
-            switch result {
-            case .success(let data):
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        competition?(image)
-                    }
-                }
-            case .failure(let failure):
-                print(failure)
-            }
-        }
-    }
+    // -MARK: private
     
     private func completitionSuccess(_ user: User) {
         self.user = user
@@ -91,10 +86,6 @@ class UserViewController: UIViewController {
             self?.dismiss(animated: true)
         })
         present(successAlert, animated: true, completion: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

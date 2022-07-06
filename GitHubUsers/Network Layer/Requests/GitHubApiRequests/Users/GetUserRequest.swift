@@ -16,8 +16,8 @@ struct GetUserRequest: RequestProtocol {
     }
     
     var urlRequest: URLRequest? {
-        guard let stringUrl = URLProvider.imagesApiStringURL2,
-              let url = URL(string: stringUrl + "/\(username)") else {
+        guard let stringUrl = URLProvider.gitHubUsersApiPath,
+              let url = URL(string: stringUrl + "/" + username) else {
                   return nil
               }
         

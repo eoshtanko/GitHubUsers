@@ -1,5 +1,5 @@
 //
-//  EmojiCollectionViewCell.swift
+//  EmojisCollectionViewCell.swift
 //  GitHubEmojis
 //
 //  Created by Екатерина on 06.07.2022.
@@ -8,6 +8,8 @@
 import UIKit
 
 class EmojisCollectionViewCell: UICollectionViewCell {
+    
+    // -MARK: fields
     
     static let identifier = String(describing: EmojisCollectionViewCell.self)
     
@@ -19,38 +21,38 @@ class EmojisCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews()
+        addSubview(emojiImageView)
         configureEmojiImageView()
     }
     
-    override func layoutSubviews() {
-         super.layoutSubviews()
-         self.emojiImageView.layer.cornerRadius = self.emojiImageView.frame.width / 2
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        emojiImageView.image = UIImage(named: "defaultImage")
+        emojiImageView.setDefaultImage()
     }
     
     // -MARK: internal
     
     func configure(with emojiUrl: String) {
-        downloadImageAction?(emojiUrl, setImage)
+        downloadImageAction?(emojiUrl) { [weak self] emoji in
+            self?.emojiImageView.image = emoji
+        }
     }
     
     // -MARK: private
     
-    private func addSubviews() {
-        addSubview(emojiImageView)
-    }
-    
     private func configureEmojiImageView() {
-        emojiImageView.image = UIImage(named: "defaultImage")
+        emojiImageView.setDefaultImage()
         emojiImageView.contentMode = .scaleAspectFill
         emojiImageView.frame.size = CGSize(width: Const.emojiSideSize, height: Const.emojiSideSize)
         self.emojiImageView.clipsToBounds = true
-        
+        configureEmojiImageViewConstraints()
+    }
+    
+    private func configureEmojiImageViewConstraints() {
         emojiImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             emojiImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -60,15 +62,7 @@ class EmojisCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    private func setImage(image: UIImage) {
-        emojiImageView.image = image
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     private enum Const {
-        static let emojiSideSize: CGFloat = 60
+        static let emojiSideSize: CGFloat = 45
     }
 }

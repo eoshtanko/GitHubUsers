@@ -1,5 +1,5 @@
 //
-//  EmojiView.swift
+//  EmojisView.swift
 //  GitHubEmojis
 //
 //  Created by Екатерина on 06.07.2022.
@@ -9,34 +9,35 @@ import UIKit
 
 class EmojisView: UIView {
     
-    let collectionView: UICollectionView
+    // -MARK: fields
     
-    var activityIndicator: UIActivityIndicatorView?
+    let collectionView: UICollectionView
+    var activityIndicator = UIActivityIndicatorView()
+    
+    // -MARK: override
     
     override init(frame: CGRect) {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 15, bottom: 0, right: 15)
+        layout.sectionInset = UIEdgeInsets(top: Const.collectionSectionInset,
+                                           left: Const.collectionSectionInset, bottom: 0,
+                                           right: Const.collectionSectionInset)
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.contentInsetAdjustmentBehavior = .always
-
         super.init(frame: frame)
+        backgroundColor = .white
+        configureCollectionView()
+        configureActivityIndicator()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureView() {
-        configureCollectionView()
-        configureActivityIndicator()
-        collectionView.frame.origin = CGPoint(x: 0, y: 20)
-    }
+    // -MARK: private
     
-    func configureCollectionView() {
-        self.addSubview(collectionView)
+    private func configureCollectionView() {
+        addSubview(collectionView)
         registerCell()
         configureCollectionViewAppearance()
-        backgroundColor = .white
     }
     
     private func registerCell() {
@@ -55,10 +56,12 @@ class EmojisView: UIView {
     
     private func configureActivityIndicator() {
         activityIndicator = UIActivityIndicatorView()
-        activityIndicator?.center = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
-        activityIndicator?.hidesWhenStopped = true
-        if let activityIndicator = activityIndicator {
-            collectionView.addSubview(activityIndicator)
-        }
+        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
+        activityIndicator.hidesWhenStopped = true
+        collectionView.addSubview(activityIndicator)
+    }
+    
+    private enum Const {
+        static let collectionSectionInset: CGFloat = 15
     }
 }
