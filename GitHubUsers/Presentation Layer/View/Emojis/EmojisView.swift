@@ -32,6 +32,14 @@ class EmojisView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // -MARK: internal
+    
+    func configureCollectionViewFrame() {
+        collectionView.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height,
+                                      width: frame.width,
+                                      height: collectionView.frame.height - safeAreaInsets.bottom)
+    }
+    
     // -MARK: private
     
     private func configureCollectionView() {

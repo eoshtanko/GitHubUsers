@@ -49,7 +49,7 @@ class EmojisViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        emojisView?.collectionView.frame.origin = CGPoint(x: 0, y: UIApplication.shared.statusBarFrame.height)
+        emojisView?.configureCollectionViewFrame()
     }
     
     // -MARK: private
