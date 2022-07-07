@@ -36,7 +36,7 @@ class EmojisViewController: UIViewController {
     }
     
     override func loadView() {
-        view = EmojisView()
+        view = EmojisView(tabBarController: tabBarController)
     }
     
     override func viewDidLoad() {

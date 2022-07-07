@@ -16,16 +16,16 @@ class EmojisView: UIView {
     
     // -MARK: override
     
-    override init(frame: CGRect) {
+    init(tabBarController: UITabBarController?) {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: Const.collectionSectionInset,
                                            left: Const.collectionSectionInset, bottom: 0,
                                            right: Const.collectionSectionInset)
-        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        super.init(frame: frame)
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        super.init(frame: CGRect.zero)
         backgroundColor = .white
         configureCollectionView()
-        configureActivityIndicator()
+        configureActivityIndicator(tabBarController)
     }
     
     required init?(coder: NSCoder) {
@@ -63,8 +63,9 @@ class EmojisView: UIView {
         ])
     }
     
-    private func configureActivityIndicator() {
-        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
+    private func configureActivityIndicator(_ tabBarController: UITabBarController?) {
+        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX,
+                                           y: UIScreen.main.bounds.midY - (tabBarController?.tabBar.frame.size.height ?? 0))
         activityIndicator.hidesWhenStopped = true
         collectionView.addSubview(activityIndicator)
     }
