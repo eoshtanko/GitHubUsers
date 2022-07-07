@@ -37,13 +37,14 @@ class UserView: UIView {
     
     // -MARK: override
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(login: String?, navigationItem: UINavigationItem) {
+        super.init(frame: CGRect.zero)
         backgroundColor = .white
         addSubviews(avatarImageView, nameTitleLabel, nameLabel, emailLabel, emailTitleLabel, organizationLabel, organizationTitleLabel, followingLabel, followingTitleLabel, followersLabel, followersTitleLabel, dateLabel, dateTitleLabel)
         configureConstraints()
         configureAvatarImageView()
-        configureLabels()
+        configureTitleLabels()
+        configureNavigationTitle(login, navigationItem)
         configureActivityIndicator()
     }
     
@@ -60,36 +61,17 @@ class UserView: UIView {
     
     func configureView(downloadImageAction: ((String, ((UIImage) -> Void)?) -> Void)?, navigationItem: UINavigationItem) {
         self.downloadImageAction = downloadImageAction
-        navigationItem.title = "No Name"
     }
     
     func configure(with user: User, navigationItem: UINavigationItem) {
-        if let login = user.login {
-            navigationItem.title = login
-        }
-        if let name = user.name {
-            nameLabel.text = name
-        }
-        if let email = user.email {
-            emailLabel.text = email
-        }
-        if let organization = user.company {
-            organizationLabel.text = organization
-        }
-        if let following = user.following {
-            followingLabel.text = String(following)
-        }
-        if let followers = user.followers {
-            followersLabel.text = String(followers)
-        }
-        if let createdAt = user.createdAt {
-            dateLabel.text = String(createdAt.prefix(10))
-        }
-        if let avatarUrl = user.avatarUrl {
-            downloadImageAction?(avatarUrl) { [weak self] image in
-                self?.avatarImageView.image = image
-            }
-        }
+        configureNavigationTitle(user.login, navigationItem)
+        configureAvatarImageContent(with: user)
+        nameLabel.text = user.name != nil ? user.name : Const.noInfoText
+        emailLabel.text = user.email != nil ? user.email : Const.noInfoText
+        organizationLabel.text = user.company != nil ? user.company : Const.noInfoText
+        configureFollowingLabelContent(with: user)
+        configureFollowersLabelContent(with: user)
+        configureDateLabelContent(with: user)
     }
     
     // -MARK: private
@@ -154,20 +136,15 @@ class UserView: UIView {
         avatarImageView.clipsToBounds = true
     }
     
-    private func configureLabels() {
+    private func configureTitleLabels() {
         configureTitleLabelsFont(titleLabels: nameTitleLabel, emailTitleLabel, organizationTitleLabel, followingTitleLabel, followersTitleLabel, dateTitleLabel)
-        configureContent()
+        configureTitleValues()
     }
     
     private func configureTitleLabelsFont(titleLabels: UILabel...) {
         for label in titleLabels {
             label.font = UIFont.systemFont(ofSize: Const.titleLabelsFontSize, weight: .semibold)
         }
-    }
-    
-    private func configureContent() {
-        configureTitleValues()
-        configureDefaultLabelsValues(labels: nameLabel, emailLabel, organizationLabel, followingLabel, followersLabel, dateLabel)
     }
     
     private func configureTitleValues() {
@@ -179,9 +156,9 @@ class UserView: UIView {
         dateTitleLabel.text = "Creation Date:"
     }
     
-    private func configureDefaultLabelsValues(labels: UILabel...) {
-        for label in labels {
-            label.text = "No info"
+    private func configureNavigationTitle(_ login: String?, _ navigationItem: UINavigationItem) {
+        if let login = login {
+            navigationItem.title = login
         }
     }
     
@@ -191,6 +168,38 @@ class UserView: UIView {
         activityIndicator?.hidesWhenStopped = true
         if let activityIndicator = activityIndicator {
             addSubview(activityIndicator)
+        }
+    }
+    
+    private func configureFollowingLabelContent(with user: User) {
+        if let following = user.following {
+            followingLabel.text = String(following)
+        } else {
+            followingLabel.text = Const.noInfoText
+        }
+    }
+    
+    private func configureFollowersLabelContent(with user: User) {
+        if let followers = user.followers {
+            followersLabel.text = String(followers)
+        } else {
+            followersLabel.text = Const.noInfoText
+        }
+    }
+    
+    private func configureDateLabelContent(with user: User) {
+        if let createdAt = user.createdAt {
+            dateLabel.text = String(createdAt.prefix(Const.datePrefix))
+        } else {
+            dateLabel.text = Const.noInfoText
+        }
+    }
+    
+    private func configureAvatarImageContent(with user: User) {
+        if let avatarUrl = user.avatarUrl {
+            downloadImageAction?(avatarUrl) { [weak self] image in
+                self?.avatarImageView.image = image
+            }
         }
     }
     
@@ -204,5 +213,7 @@ class UserView: UIView {
         static let titleLabelsFontSize: CGFloat = 17
         static let labelsTrailingConstraint: CGFloat = -15
         static let avatarSideSize: CGFloat = 190
+        static let datePrefix = 10
+        static let noInfoText = "No info"
     }
 }

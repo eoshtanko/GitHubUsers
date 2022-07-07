@@ -36,13 +36,11 @@ class UserViewController: UIViewController {
     }
     
     override func loadView() {
-        view = UserView()
+        view = UserView(login: userName, navigationItem: navigationItem)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userView?.configureView(downloadImageAction: downloadImageService.downloadImage,
-                                navigationItem: navigationItem)
         userView?.activityIndicator?.startAnimating()
         downloadUser()
     }
@@ -69,6 +67,8 @@ class UserViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.userView?.activityIndicator?.stopAnimating()
+            self.userView?.configureView(downloadImageAction: self.downloadImageService.downloadImage,
+                                         navigationItem: self.navigationItem)
             self.userView?.configure(with: user, navigationItem: self.navigationItem)
         }
     }
@@ -84,6 +84,7 @@ class UserViewController: UIViewController {
         let successAlert = UIAlertController(title: "Ошибка", message: "Проверьте подключение к интернету.", preferredStyle: UIAlertController.Style.alert)
         successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [weak self] _ in
             self?.dismiss(animated: true)
+            self?.navigationController?.popViewController(animated: true)
         })
         present(successAlert, animated: true, completion: nil)
     }
