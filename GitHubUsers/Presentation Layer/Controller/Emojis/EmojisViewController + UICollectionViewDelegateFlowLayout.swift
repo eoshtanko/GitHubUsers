@@ -10,7 +10,7 @@ import UIKit
 extension EmojisViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = collectionView.bounds.width / Const.density
+        let itemWidth = collectionView.bounds.width / Const.densityOfCollectionItems
         return CGSize(width: itemWidth, height: itemWidth)
     }
 }

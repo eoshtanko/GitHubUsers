@@ -103,6 +103,6 @@ class EmojisViewController: UIViewController {
     }
     
     enum Const {
-        static let density: CGFloat = 10
+        static let densityOfCollectionItems: CGFloat = 10
     }
 }
