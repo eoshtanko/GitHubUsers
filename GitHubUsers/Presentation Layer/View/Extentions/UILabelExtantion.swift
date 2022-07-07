@@ -10,7 +10,8 @@ import UIKit
 extension UILabel {
     
     func enableAdjustingFontSizeToFit() {
-        minimumScaleFactor = 10 / UIFont.labelFontSize
+        let minimumFontSize: CGFloat = 10
+        minimumScaleFactor = minimumFontSize / UIFont.labelFontSize
         adjustsFontSizeToFitWidth = true
     }
 }
