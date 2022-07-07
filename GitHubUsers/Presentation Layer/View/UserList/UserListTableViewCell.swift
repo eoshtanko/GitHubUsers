@@ -79,6 +79,7 @@ class UserListTableViewCell: UITableViewCell {
     
     private func configureLoginLabel() {
         loginLabel.font = UIFont.systemFont(ofSize: Const.loginLabelFontSize, weight: .medium)
+        loginLabel.enableAdjustingFontSizeToFit()
         configureLoginLabelConstraints()
     }
     
@@ -92,6 +93,7 @@ class UserListTableViewCell: UITableViewCell {
     
     private func configureIdLabel() {
         idLabel.font = UIFont.systemFont(ofSize: Const.idLabelFontSize, weight: .light)
+        idLabel.enableAdjustingFontSizeToFit()
         configureIdLabelConstraints()
     }
     

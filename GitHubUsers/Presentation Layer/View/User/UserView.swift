@@ -43,7 +43,7 @@ class UserView: UIView {
         addSubviews(avatarImageView, nameTitleLabel, nameLabel, emailLabel, emailTitleLabel, organizationLabel, organizationTitleLabel, followingLabel, followingTitleLabel, followersLabel, followersTitleLabel, dateLabel, dateTitleLabel)
         configureConstraints()
         configureAvatarImageView()
-        configureTitleLabels()
+        configureLabels()
         configureNavigationTitle(login, navigationItem)
         configureActivityIndicator()
     }
@@ -136,9 +136,10 @@ class UserView: UIView {
         avatarImageView.clipsToBounds = true
     }
     
-    private func configureTitleLabels() {
+    private func configureLabels() {
         configureTitleLabelsFont(titleLabels: nameTitleLabel, emailTitleLabel, organizationTitleLabel, followingTitleLabel, followersTitleLabel, dateTitleLabel)
         configureTitleValues()
+        enableAdjustingFontSizeToFit(labels: nameLabel, emailLabel, organizationLabel, followingLabel, followersLabel)
     }
     
     private func configureTitleLabelsFont(titleLabels: UILabel...) {
@@ -154,6 +155,12 @@ class UserView: UIView {
         followingTitleLabel.text = "Following:"
         followersTitleLabel.text = "Followers:"
         dateTitleLabel.text = "Creation Date:"
+    }
+    
+    private func enableAdjustingFontSizeToFit(labels: UILabel...) {
+        for label in labels {
+            label.enableAdjustingFontSizeToFit()
+        }
     }
     
     private func configureNavigationTitle(_ login: String?, _ navigationItem: UINavigationItem) {

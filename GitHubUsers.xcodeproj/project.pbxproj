@@ -40,6 +40,7 @@
 		341DDA4A287586F500001DFA /* GitHubUserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA49287586F400001DFA /* GitHubUserParser.swift */; };
 		341DDA512876206600001DFA /* UIImageViewExtantion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA502876206600001DFA /* UIImageViewExtantion.swift */; };
 		341DDA542876311B00001DFA /* DownloadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA532876311B00001DFA /* DownloadImageService.swift */; };
+		341DDA572876A16E00001DFA /* UILabelExtantion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA562876A16D00001DFA /* UILabelExtantion.swift */; };
 		34C0DA47287423C70046AB90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C0DA46287423C70046AB90 /* AppDelegate.swift */; };
 		34C0DA50287423CB0046AB90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C0DA4F287423CB0046AB90 /* Assets.xcassets */; };
 		34C0DA53287423CB0046AB90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C0DA51287423CB0046AB90 /* LaunchScreen.storyboard */; };
@@ -80,6 +81,7 @@
 		341DDA502876206600001DFA /* UIImageViewExtantion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtantion.swift; sourceTree = "<group>"; };
 		341DDA532876311B00001DFA /* DownloadImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageService.swift; sourceTree = "<group>"; };
 		341DDA552876365D00001DFA /* GitHubUsersConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GitHubUsersConfig.xcconfig; sourceTree = "<group>"; };
+		341DDA562876A16D00001DFA /* UILabelExtantion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtantion.swift; sourceTree = "<group>"; };
 		34C0DA43287423C70046AB90 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0DA46287423C70046AB90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34C0DA4F287423CB0046AB90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				341DDA502876206600001DFA /* UIImageViewExtantion.swift */,
+				341DDA562876A16D00001DFA /* UILabelExtantion.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				341DDA202874BA0900001DFA /* User.swift in Sources */,
 				341DD9F428744A3E00001DFA /* UserListViewController.swift in Sources */,
 				341DDA322874E9D900001DFA /* EmojiViewController.swift in Sources */,
+				341DDA572876A16E00001DFA /* UILabelExtantion.swift in Sources */,
 				341DDA242874CCA100001DFA /* GetEmojisRequest.swift in Sources */,
 				341DDA382874EA1100001DFA /* UserViewController.swift in Sources */,
 				341DDA302874E8F300001DFA /* Emoji.swift in Sources */,
