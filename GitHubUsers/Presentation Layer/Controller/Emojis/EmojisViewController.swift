@@ -76,6 +76,7 @@ class EmojisViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             self?.emojisView?.activityIndicator.stopAnimating()
             self?.refreshControl.endRefreshing()
+            self?.emojisView?.collectionView.isHidden = false
             self?.emojisView?.collectionView.reloadData()
         }
     }
@@ -84,6 +85,7 @@ class EmojisViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             self?.emojisView?.activityIndicator.stopAnimating()
             self?.refreshControl.endRefreshing()
+            self?.emojisView?.collectionView.isHidden = false
             self?.showFailureAlert()
         }
     }

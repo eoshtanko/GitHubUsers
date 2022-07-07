@@ -43,6 +43,7 @@ class EmojisView: UIView {
     // -MARK: private
     
     private func configureCollectionView() {
+        collectionView.isHidden = true
         addSubview(collectionView)
         registerCell()
         configureCollectionViewAppearance()
@@ -66,7 +67,7 @@ class EmojisView: UIView {
     private func configureActivityIndicator() {
         activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
         activityIndicator.hidesWhenStopped = true
-        collectionView.addSubview(activityIndicator)
+        addSubview(activityIndicator)
     }
     
     private enum Const {
