@@ -18,8 +18,8 @@ class UserViewController: UIViewController {
         view as? UserView
     }
     
-    private let requestSender: RequestSenderProtocol
     private let downloadImageService: DownloadImageServiceProtocol
+    private let requestSender: RequestSenderProtocol
     
     // -MARK: override
     

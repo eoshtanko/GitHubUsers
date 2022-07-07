@@ -18,8 +18,8 @@ class UserListViewController: UIViewController {
         view as? UserListView
     }
     
-    private let requestSender: RequestSenderProtocol
     let downloadImageService: DownloadImageServiceProtocol
+    private let requestSender: RequestSenderProtocol
     
     private let refreshControl = UIRefreshControl()
     

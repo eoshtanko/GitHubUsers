@@ -17,10 +17,10 @@ class EmojisViewController: UIViewController {
         view as? EmojisView
     }
     
-    private let refreshControl = UIRefreshControl()
-    
-    private let requestSender: RequestSenderProtocol
     let downloadImageService: DownloadImageServiceProtocol
+    private let requestSender: RequestSenderProtocol
+    
+    private let refreshControl = UIRefreshControl()
     
     // -MARK: override
     
