@@ -18,9 +18,9 @@ class UserListView: UIView {
     
     // -MARK: internal
     
-    func configureView(navigationController: UINavigationController?) {
+    func configureView(tabBarController: UITabBarController?) {
         configureTableView()
-        configureActivityIndicator(navigationController)
+        configureActivityIndicator(tabBarController)
     }
     
     func configureNavigationTitle(navigationItem: UINavigationItem,
@@ -52,8 +52,8 @@ class UserListView: UIView {
         ])
     }
     
-    private func configureActivityIndicator(_ navigationController: UINavigationController?) {
-        activityIndicator.center = navigationController?.navigationBar.center ?? CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
+    private func configureActivityIndicator(_ tabBarController: UITabBarController?) {
+        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY - (tabBarController?.tabBar.frame.size.height ?? 0))
         activityIndicator.hidesWhenStopped = true
         tableView.addSubview(activityIndicator)
     }

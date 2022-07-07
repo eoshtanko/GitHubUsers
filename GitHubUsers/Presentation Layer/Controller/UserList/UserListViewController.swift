@@ -43,7 +43,7 @@ class UserListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        userListView?.configureView(navigationController: navigationController)
+        userListView?.configureView(tabBarController: tabBarController)
         userListView?.activityIndicator.startAnimating()
         initiallyDownloadUsers()
         configurePullToRefresh()
