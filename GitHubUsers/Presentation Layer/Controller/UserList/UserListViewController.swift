@@ -84,6 +84,7 @@ class UserListViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             self?.userListView?.activityIndicator.stopAnimating()
             self?.refreshControl.endRefreshing()
+            self?.userListView?.tableView.isHidden = false
             self?.userListView?.tableView.reloadData()
         }
     }
@@ -92,6 +93,7 @@ class UserListViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             self?.userListView?.activityIndicator.stopAnimating()
             self?.refreshControl.endRefreshing()
+            self?.userListView?.tableView.isHidden = false
             self?.showFailureAlert()
         }
     }

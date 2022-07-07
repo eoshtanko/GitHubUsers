@@ -32,6 +32,7 @@ class UserListView: UIView {
     // -MARK: private
     
     private func configureTableView() {
+        tableView.isHidden = true
         self.addSubview(tableView)
         registerCell()
         configureTableViewAppearance()
@@ -53,8 +54,8 @@ class UserListView: UIView {
     }
     
     private func configureActivityIndicator(_ tabBarController: UITabBarController?) {
-        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY - (tabBarController?.tabBar.frame.size.height ?? 0))
+        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
         activityIndicator.hidesWhenStopped = true
-        tableView.addSubview(activityIndicator)
+        addSubview(activityIndicator)
     }
 }

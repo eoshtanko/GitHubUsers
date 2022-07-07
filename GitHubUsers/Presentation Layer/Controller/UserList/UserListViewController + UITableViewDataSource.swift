@@ -51,6 +51,7 @@ extension UserListViewController: UITableViewDataSource {
     private func completitionSuccessForRepeatedRequest(_ moreUsers: [UserListItem]) {
         usersList.append(contentsOf: moreUsers)
         DispatchQueue.main.async { [weak self] in
+            self?.userListView?.tableView.isHidden = false
             self?.userListView?.tableView.reloadData()
         }
     }
