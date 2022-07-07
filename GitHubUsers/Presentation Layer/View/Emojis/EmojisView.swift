@@ -65,7 +65,7 @@ class EmojisView: UIView {
     
     private func configureActivityIndicator() {
         activityIndicator = UIActivityIndicatorView()
-        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
+        activityIndicator.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
         activityIndicator.hidesWhenStopped = true
         collectionView.addSubview(activityIndicator)
     }
