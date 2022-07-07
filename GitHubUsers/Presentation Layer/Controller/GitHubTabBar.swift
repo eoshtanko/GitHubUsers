@@ -36,7 +36,7 @@ class GitHubTabBar: UITabBarController {
     }
     
     private func getEmojiViewController() -> UIViewController {
-        let viewController = EmojiViewController(requestSender: RequestSender(),
+        let viewController = EmojisViewController(requestSender: RequestSender(),
                                                  downloadImageService: DownloadImageService(
                                                     requestSender: RequestSender()))
         setTabBarItemImage(viewController: viewController, imageName: "smiley.fill")

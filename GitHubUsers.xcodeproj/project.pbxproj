@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		341DD9F228742CAF00001DFA /* GitHubTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9F128742CAF00001DFA /* GitHubTabBar.swift */; };
 		341DD9F428744A3E00001DFA /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9F328744A3D00001DFA /* UserListViewController.swift */; };
-		341DD9F728744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9F628744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift */; };
-		341DD9F928744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9F828744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift */; };
+		341DD9F728744BFB00001DFA /* UserListViewController + UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9F628744BFB00001DFA /* UserListViewController + UITableViewDelegate.swift */; };
+		341DD9F928744C0A00001DFA /* UserListViewController + UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9F828744C0A00001DFA /* UserListViewController + UITableViewDataSource.swift */; };
 		341DD9FC28744D7700001DFA /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9FB28744D7700001DFA /* UserListView.swift */; };
 		341DD9FE2874550E00001DFA /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DD9FD2874550E00001DFA /* UserListTableViewCell.swift */; };
 		341DDA042874A9C900001DFA /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA032874A9C900001DFA /* RequestProtocol.swift */; };
 		341DDA062874A9FD00001DFA /* GetUserListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA052874A9FD00001DFA /* GetUserListRequest.swift */; };
 		341DDA092874AA3200001DFA /* ParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA082874AA3200001DFA /* ParserProtocol.swift */; };
-		341DDA0B2874AA5C00001DFA /* GitHubUsersParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA0A2874AA5C00001DFA /* GitHubUsersParser.swift */; };
+		341DDA0B2874AA5C00001DFA /* GitHubUserListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA0A2874AA5C00001DFA /* GitHubUserListParser.swift */; };
 		341DDA0E2874AAA200001DFA /* RequestsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA0D2874AAA200001DFA /* RequestsFactory.swift */; };
 		341DDA102874AAB000001DFA /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA0F2874AAB000001DFA /* RequestConfig.swift */; };
 		341DDA142874AAE900001DFA /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA132874AAE900001DFA /* RequestSender.swift */; };
@@ -29,9 +29,9 @@
 		341DDA262874E53B00001DFA /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA252874E53B00001DFA /* ImageParser.swift */; };
 		341DDA282874E58700001DFA /* GetImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA272874E58700001DFA /* GetImageRequest.swift */; };
 		341DDA302874E8F300001DFA /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA2F2874E8F300001DFA /* Emoji.swift */; };
-		341DDA322874E9D900001DFA /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA312874E9D900001DFA /* EmojiViewController.swift */; };
-		341DDA342874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA332874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift */; };
-		341DDA362874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA352874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift */; };
+		341DDA322874E9D900001DFA /* EmojisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA312874E9D900001DFA /* EmojisViewController.swift */; };
+		341DDA342874E9EF00001DFA /* EmojisViewController + UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA332874E9EF00001DFA /* EmojisViewController + UICollectionViewDataSource.swift */; };
+		341DDA362874E9FB00001DFA /* EmojisViewController + UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA352874E9FB00001DFA /* EmojisViewController + UICollectionViewDelegateFlowLayout.swift */; };
 		341DDA382874EA1100001DFA /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA372874EA1100001DFA /* UserViewController.swift */; };
 		341DDA3A2874EA2A00001DFA /* EmojisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA392874EA2A00001DFA /* EmojisView.swift */; };
 		341DDA3C2874EA4100001DFA /* EmojisCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DDA3B2874EA4100001DFA /* EmojisCollectionViewCell.swift */; };
@@ -49,14 +49,14 @@
 /* Begin PBXFileReference section */
 		341DD9F128742CAF00001DFA /* GitHubTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTabBar.swift; sourceTree = "<group>"; };
 		341DD9F328744A3D00001DFA /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
-		341DD9F628744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersViewController + UITableViewDelegate.swift"; sourceTree = "<group>"; };
-		341DD9F828744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersViewController + UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		341DD9F628744BFB00001DFA /* UserListViewController + UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListViewController + UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		341DD9F828744C0A00001DFA /* UserListViewController + UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListViewController + UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		341DD9FB28744D7700001DFA /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		341DD9FD2874550E00001DFA /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		341DDA032874A9C900001DFA /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		341DDA052874A9FD00001DFA /* GetUserListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListRequest.swift; sourceTree = "<group>"; };
 		341DDA082874AA3200001DFA /* ParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserProtocol.swift; sourceTree = "<group>"; };
-		341DDA0A2874AA5C00001DFA /* GitHubUsersParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUsersParser.swift; sourceTree = "<group>"; };
+		341DDA0A2874AA5C00001DFA /* GitHubUserListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserListParser.swift; sourceTree = "<group>"; };
 		341DDA0D2874AAA200001DFA /* RequestsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsFactory.swift; sourceTree = "<group>"; };
 		341DDA0F2874AAB000001DFA /* RequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfig.swift; sourceTree = "<group>"; };
 		341DDA132874AAE900001DFA /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
@@ -69,9 +69,9 @@
 		341DDA252874E53B00001DFA /* ImageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageParser.swift; sourceTree = "<group>"; };
 		341DDA272874E58700001DFA /* GetImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageRequest.swift; sourceTree = "<group>"; };
 		341DDA2F2874E8F300001DFA /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
-		341DDA312874E9D900001DFA /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
-		341DDA332874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojiViewController + UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		341DDA352874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojiViewController + UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		341DDA312874E9D900001DFA /* EmojisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisViewController.swift; sourceTree = "<group>"; };
+		341DDA332874E9EF00001DFA /* EmojisViewController + UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojisViewController + UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		341DDA352874E9FB00001DFA /* EmojisViewController + UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmojisViewController + UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		341DDA372874EA1100001DFA /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		341DDA392874EA2A00001DFA /* EmojisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisView.swift; sourceTree = "<group>"; };
 		341DDA3B2874EA4100001DFA /* EmojisCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				341DD9F328744A3D00001DFA /* UserListViewController.swift */,
-				341DD9F828744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift */,
-				341DD9F628744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift */,
+				341DD9F828744C0A00001DFA /* UserListViewController + UITableViewDataSource.swift */,
+				341DD9F628744BFB00001DFA /* UserListViewController + UITableViewDelegate.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -207,9 +207,9 @@
 		341DDA2B2874E89F00001DFA /* Emojis */ = {
 			isa = PBXGroup;
 			children = (
-				341DDA312874E9D900001DFA /* EmojiViewController.swift */,
-				341DDA332874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift */,
-				341DDA352874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift */,
+				341DDA312874E9D900001DFA /* EmojisViewController.swift */,
+				341DDA332874E9EF00001DFA /* EmojisViewController + UICollectionViewDataSource.swift */,
+				341DDA352874E9FB00001DFA /* EmojisViewController + UICollectionViewDelegateFlowLayout.swift */,
 			);
 			path = Emojis;
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 		341DDA422874F62B00001DFA /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				341DDA0A2874AA5C00001DFA /* GitHubUsersParser.swift */,
+				341DDA0A2874AA5C00001DFA /* GitHubUserListParser.swift */,
 				341DDA49287586F400001DFA /* GitHubUserParser.swift */,
 			);
 			path = Users;
@@ -458,12 +458,12 @@
 			files = (
 				341DDA1A2874AB9D00001DFA /* NetworkError.swift in Sources */,
 				341DDA282874E58700001DFA /* GetImageRequest.swift in Sources */,
-				341DD9F928744C0A00001DFA /* UsersViewController + UITableViewDataSource.swift in Sources */,
+				341DD9F928744C0A00001DFA /* UserListViewController + UITableViewDataSource.swift in Sources */,
 				341DDA48287558E600001DFA /* UserView.swift in Sources */,
-				341DDA362874E9FB00001DFA /* EmojiViewController + UICollectionViewDelegateFlowLayout.swift in Sources */,
-				341DDA0B2874AA5C00001DFA /* GitHubUsersParser.swift in Sources */,
+				341DDA362874E9FB00001DFA /* EmojisViewController + UICollectionViewDelegateFlowLayout.swift in Sources */,
+				341DDA0B2874AA5C00001DFA /* GitHubUserListParser.swift in Sources */,
 				341DDA142874AAE900001DFA /* RequestSender.swift in Sources */,
-				341DDA342874E9EF00001DFA /* EmojiViewController + UICollectionViewDataSource.swift in Sources */,
+				341DDA342874E9EF00001DFA /* EmojisViewController + UICollectionViewDataSource.swift in Sources */,
 				341DDA3C2874EA4100001DFA /* EmojisCollectionViewCell.swift in Sources */,
 				341DD9FC28744D7700001DFA /* UserListView.swift in Sources */,
 				341DDA462874F6EB00001DFA /* GitHubEmojisParser.swift in Sources */,
@@ -480,14 +480,14 @@
 				341DDA542876311B00001DFA /* DownloadImageService.swift in Sources */,
 				341DDA202874BA0900001DFA /* User.swift in Sources */,
 				341DD9F428744A3E00001DFA /* UserListViewController.swift in Sources */,
-				341DDA322874E9D900001DFA /* EmojiViewController.swift in Sources */,
+				341DDA322874E9D900001DFA /* EmojisViewController.swift in Sources */,
 				341DDA572876A16E00001DFA /* UILabelExtantion.swift in Sources */,
 				341DDA242874CCA100001DFA /* GetEmojisRequest.swift in Sources */,
 				341DDA382874EA1100001DFA /* UserViewController.swift in Sources */,
 				341DDA302874E8F300001DFA /* Emoji.swift in Sources */,
 				341DDA0E2874AAA200001DFA /* RequestsFactory.swift in Sources */,
 				341DDA3A2874EA2A00001DFA /* EmojisView.swift in Sources */,
-				341DD9F728744BFB00001DFA /* UsersViewController + UITableViewDelegate.swift in Sources */,
+				341DD9F728744BFB00001DFA /* UserListViewController + UITableViewDelegate.swift in Sources */,
 				341DDA092874AA3200001DFA /* ParserProtocol.swift in Sources */,
 				341DD9F228742CAF00001DFA /* GitHubTabBar.swift in Sources */,
 				341DDA222874CC8100001DFA /* GetUserRequest.swift in Sources */,

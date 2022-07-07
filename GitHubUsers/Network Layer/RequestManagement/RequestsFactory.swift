@@ -13,8 +13,8 @@ struct RequestsFactory {
         
         struct UsersApiRequests {
             
-            static func getUsers(since: Int) -> RequestConfig<GitHubUsersParser> {
-                return RequestConfig<GitHubUsersParser>(request: GetUserListRequest(since: since), parser: GitHubUsersParser())
+            static func getUsers(since: Int) -> RequestConfig<GitHubUserListParser> {
+                return RequestConfig<GitHubUserListParser>(request: GetUserListRequest(since: since), parser: GitHubUserListParser())
             }
             
             static func getUser(username: String) -> RequestConfig<GitHubUserParser> {

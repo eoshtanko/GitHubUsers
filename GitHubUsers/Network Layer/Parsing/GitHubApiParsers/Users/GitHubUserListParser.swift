@@ -1,5 +1,5 @@
 //
-//  ApiImageParser.swift
+//  GitHubUserListParser.swift
 //  GitHubUsers
 //
 //  Created by Екатерина on 05.07.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GitHubUsersParser: ParserProtocol {
+class GitHubUserListParser: ParserProtocol {
     
     typealias Model = [UserListItem]
     

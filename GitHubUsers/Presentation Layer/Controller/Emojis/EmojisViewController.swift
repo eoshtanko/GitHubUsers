@@ -1,5 +1,5 @@
 //
-//  EmojiViewController.swift
+//  EmojisViewController.swift
 //  GitHubemojis
 //
 //  Created by Екатерина on 06.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmojiViewController: UIViewController {
+class EmojisViewController: UIViewController {
     
     // -MARK: fields
     
